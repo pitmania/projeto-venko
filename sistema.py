@@ -5,7 +5,6 @@ import getpass
 import bcrypt
 from tabulate import tabulate
 
-salt = bcrypt.gensalt()
 
 def login():
 
