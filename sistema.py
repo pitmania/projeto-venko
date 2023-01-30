@@ -51,18 +51,20 @@ def main_menu():
             eth = paragraph[0].split()[0][:-1] #get the first word and remove last character of the first line
             mac = paragraph[2].split()[1] # get the 2nd word of the third line
 
+            data = {
+                'Intf': eth,
+                'IP Address': inet,
+                'MAC': mac,
+                'MTU': mtu,
+                'State':up_or_down
+            }
+            datas.append(data)
+
         print("\033[36m==============================================\033[m")                     
         print("\033[36m*** Welcome to config linux network system ***\033[m")
         print("\033[36m==============================================\033[m")
 
-    data = {
-        'Intf': eth,
-        'IP Address': inet,
-        'MAC': mac,
-        'MTU': mtu,
-        'State':up_or_down
-    }
-    datas.append(data)    
+   
     for data in datas:
         print(tabulate(datas, headers="keys", tablefmt="fancy_grid", showindex="always"))
 
